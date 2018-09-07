@@ -10,9 +10,9 @@ $(function () {
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
     $.get("/products/" + nextId + "/data", function() {
       $(".productName").text(data["name"]);
+      $(".productInventory").text(data["inventory"]);
       $(".productPrice").text(data["price"]);
       $(".productDescription").text(data["description"]);
-      $(".productInventory").text(data["inventory"]);
 
       $(".js-next").attr("data-id", data["id"]);
     });
